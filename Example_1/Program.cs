@@ -1,42 +1,44 @@
 ﻿using System;
-using Elves;
+using Payments;
+using EnteringExams;
+using Calculator;
 
 namespace Example_1
 {
-    internal class Program
+    public class Program
     {
-        static void InfoElf(Elf elf)
-        {
-            elf.Info();
-        }
-
-        static void ElfAttack(Elf elf)
-        {
-            elf.Attack();
-        }
-
-        static void ElfSound(Elf elf)
-        {
-            elf.Sound();
-        }
-
         static void Main(string[] args)
         {
-            // ------ я вже зробив що було в завданні тому просто додав поліморфні методи
+            /*Payment payment = new Payment(100, "Na chipsiki");
+            Bank bank = new Bank();
+            bank.doPayment(payment);
+            payment.showInfo();*/
 
-            TempleKnight temple_knight = new TempleKnight(100, "Weapon", "Magic", "Karma", "AttackMethod");
+            /*Exam exam1 = new Exam("Math", 70);
+            Exam exam2 = new Exam("English", 60);
+            University university = new University();
+            university.SetExam(exam1);
+            university.TryExam(75);
+            university.SetExam(exam2);
+            university.TryExam(10);
+            university.SetExam(exam2);
+            university.TryExam(80);*/
 
-            // взагалі з іншої гілки успадкування
-            EvasSaint evas_saint = new EvasSaint(1000, "Weaponnnn", "Total magic", "Karma", "Magic method");
+            LogCalculator logCalculator = new LogCalculator();
+            float output = 0;
+            logCalculator.calcLog(ref output, 10);
 
+            Console.WriteLine($"Log(10) = {output}");
 
-            InfoElf(temple_knight);
-            ElfAttack(temple_knight);
-            ElfSound(temple_knight);
+            logCalculator.sumLogs(ref output, 10, 100);
+            Console.WriteLine($"Log(10 * 100) = {output}");
 
-            InfoElf(evas_saint);
-            ElfAttack(evas_saint);
-            ElfSound(evas_saint);
+            logCalculator.substractLogs(ref output, 100, 10);
+            Console.WriteLine($"Log(100 / 10) = {output}");
+
+            logCalculator.calcLogXY(ref output, 10, 2);
+            Console.WriteLine($"Log(10, 2) = {output}");
+
         }
     }
 }

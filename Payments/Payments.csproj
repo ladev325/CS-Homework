@@ -3,14 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
+	  <OutputType>Library</OutputType>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Calculator\Calculator.csproj" />
-    <ProjectReference Include="..\EnteringExams\EnteringExams.csproj" />
-    <ProjectReference Include="..\Payments\Payments.csproj" />
-  </ItemGroup>
 
 </Project>
